@@ -1,0 +1,13 @@
+{
+  "contactEmail": "geral@entre-dois-mundos.com",
+  "founder": {
+    "pt": {
+      "bio": "**Andreza Caldeira** é jurista, autora e colunista luso-moçambicana. O seu percurso entre Portugal e Moçambique, a escrita e a participação cívica inspiraram a criação de um espaço onde outras vozes possam ser ouvidas.\n\nÉ autora do livro *«Assinado: uma experiência vivida»*, um testemunho na primeira pessoa sobre crescer entre dois países — e a vontade de transformar essa experiência em pontes para outros jovens.",
+      "quote": "«Não quero ser apenas uma voz entre dois mundos. Quero abrir espaço para que outras vozes também sejam ouvidas.»"
+    },
+    "en": {
+      "bio": "**Andreza Caldeira** is a Portuguese-Mozambican lawyer, author and columnist. Her path between Portugal and Mozambique, her writing and her civic engagement inspired the creation of a space where other voices can be heard.\n\nShe is the author of *«Assinado: uma experiência vivida»* (Signed: a lived experience), a first-person account of growing up between two countries — and of the wish to turn that experience into bridges for other young people.",
+      "quote": "“I don't want to be just one voice between two worlds. I want to make room for other voices to be heard as well.”"
+    }
+  }
+}

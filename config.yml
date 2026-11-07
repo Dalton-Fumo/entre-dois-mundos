@@ -1,0 +1,143 @@
+# ============================================================
+#  Painel de administração — Uma Voz Entre Dois Mundos
+#  Sveltia CMS (mesmo formato do Decap CMS)
+#  Guia de configuração: GUIA-LANCAMENTO.md → secção 4
+# ============================================================
+
+backend:
+  name: github
+  repo: Dalton-Fumo/entre-dois-mundos   # <-- o teu utilizador/repositório
+  branch: main
+  # Se o site NÃO estiver na Netlify, descomenta e usa o teu OAuth client:
+  # base_url: https://o-teu-oauth-client.workers.dev
+
+# Endereço público do site (mostrado no painel)
+site_url: https://entre-dois-mundos.netlify.app
+display_url: https://entre-dois-mundos.netlify.app
+logo:
+  src: /assets/favicon.png
+
+# Onde ficam as imagens enviadas pelo painel
+media_folder: "assets/artigos"
+public_folder: "/assets/artigos"
+
+collections:
+  # ----------------------------------------------------------
+  #  ARTIGOS
+  # ----------------------------------------------------------
+  - name: artigos
+    label: Artigos
+    label_singular: Artigo
+    description: "Adiciona, edita ou remove artigos da revista digital."
+    files:
+      - name: lista
+        label: Lista de artigos
+        file: data/posts.json
+        fields:
+          - name: posts
+            label: Artigos publicados
+            label_singular: Artigo
+            widget: list
+            summary: "{{fields.title_pt}}"
+            collapsed: true
+            fields:
+              - name: id
+                label: "Identificador (URL)"
+                widget: string
+                required: true
+                pattern: ['^[a-z0-9-]+$', "Usa apenas minúsculas, números e hífenes (ex.: a-minha-historia)"]
+                hint: "Minúsculas, sem espaços nem acentos. É o endereço do artigo: #artigo/este-id"
+              - name: date
+                label: Data
+                widget: datetime
+                date_format: "YYYY-MM-DD"
+                time_format: false
+                format: "YYYY-MM-DD"
+                required: true
+              - name: tag_pt
+                label: "Categoria (PT)"
+                widget: string
+                required: false
+                hint: "Ex.: Identidade, Educação, Cidadania"
+              - name: tag_en
+                label: "Category (EN)"
+                widget: string
+                required: false
+                hint: "Ex.: Identity, Education, Citizenship"
+              - name: title_pt
+                label: "Título (PT)"
+                widget: string
+                required: true
+              - name: title_en
+                label: "Title (EN)"
+                widget: string
+                required: false
+              - name: excerpt_pt
+                label: "Resumo (PT)"
+                widget: text
+                required: false
+                hint: "1–2 frases que aparecem no cartão do artigo."
+              - name: excerpt_en
+                label: "Summary (EN)"
+                widget: text
+                required: false
+              - name: author
+                label: Autor/a
+                widget: string
+                default: "Andreza Caldeira"
+                required: false
+              - name: cover
+                label: Imagem de capa
+                widget: image
+                required: false
+                hint: "Opcional. Sem imagem, o cartão usa um fundo com um número."
+              - name: body_pt
+                label: "Texto (PT)"
+                widget: markdown
+                required: true
+              - name: body_en
+                label: "Text (EN)"
+                widget: markdown
+                required: false
+                hint: "Se ficar vazio, o site mostra o texto em português."
+
+  # ----------------------------------------------------------
+  #  PÁGINA DA FUNDADORA + CONTACTO
+  # ----------------------------------------------------------
+  - name: pagina
+    label: Fundadora e contacto
+    description: "Biografia, citação e email que aparecem no site."
+    files:
+      - name: geral
+        label: Fundadora e contacto
+        file: data/settings.json
+        fields:
+          - name: contactEmail
+            label: Email de contacto
+            widget: string
+            required: true
+            hint: "Aparece no rodapé e na Política de Privacidade."
+          - name: founder
+            label: Fundadora
+            widget: object
+            fields:
+              - name: pt
+                label: Português
+                widget: object
+                fields:
+                  - name: bio
+                    label: Biografia
+                    widget: markdown
+                  - name: quote
+                    label: Citação
+                    widget: text
+              - name: en
+                label: English
+                widget: object
+                fields:
+                  - name: bio
+                    label: Biography
+                    widget: markdown
+                  - name: quote
+                    label: Quote
+                    widget: text

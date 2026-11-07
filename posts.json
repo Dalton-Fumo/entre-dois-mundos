@@ -1,0 +1,46 @@
+{
+  "posts": [
+    {
+      "id": "pertence-a-dois-paises",
+      "date": "2026-11-01",
+      "tag_pt": "Identidade",
+      "tag_en": "Identity",
+      "title_pt": "Pertencer a dois países é viver entre duas perguntas?",
+      "title_en": "Belonging to two countries means living between two questions?",
+      "excerpt_pt": "Uma reflexão sobre identidade, pertença e o que significa construir pontes entre culturas.",
+      "excerpt_en": "A reflection on identity, belonging and what it means to build bridges between cultures.",
+      "author": "Redação de demonstração",
+      "cover": "",
+      "body_pt": "Viver entre culturas pode significar crescer com diferentes referências, línguas e memórias. A experiência não se resume a escolher um lado: pode ser uma forma de compreender vários pontos de vista.\n\nHá perguntas que acompanham quem cresce entre dois países. Onde é que pertenço? A que tradição respondo quando me perguntam de onde sou? Estas perguntas não têm de ser uma ferida. Podem ser o começo de uma forma mais ampla de olhar o mundo.\n\n## Duas histórias, uma voz\n\nCarregar duas histórias não significa viver dividido. Significa ter acesso a dois repertórios de afetos, de paisagens e de formas de estar. É essa multiplicidade que permite reconhecer, no outro, aquilo que também nos constitui.\n\n> A pertença não é um lugar que se ocupa. É uma relação que se constrói.\n\nO desafio é transformar essa multiplicidade em participação ativa, reconhecendo tanto os laços com o país de origem como as responsabilidades no país onde se vive. É aí que a identidade deixa de ser apenas uma pergunta e se torna uma contribuição.",
+      "body_en": "Living between cultures can mean growing up with different references, languages and memories. The experience is not about choosing one side: it can be a way of understanding several points of view.\n\nSome questions follow those who grow up between two countries. Where do I belong? Which tradition do I answer to when people ask where I am from? These questions do not have to be a wound. They can be the beginning of a broader way of looking at the world.\n\n## Two stories, one voice\n\nCarrying two stories does not mean living divided. It means having access to two repertoires of affection, landscapes and ways of being. That multiplicity is what allows us to recognise, in others, what also constitutes us.\n\n> Belonging is not a place you occupy. It is a relationship you build.\n\nThe challenge is to turn that multiplicity into active participation, acknowledging both the ties to the country of origin and the responsibilities in the country where we live. That is where identity stops being only a question and becomes a contribution."
+    },
+    {
+      "id": "futuro-da-educacao",
+      "date": "2026-10-20",
+      "tag_pt": "Educação",
+      "tag_en": "Education",
+      "title_pt": "O futuro da educação também se escreve na diáspora",
+      "title_en": "The future of education is also written in the diaspora",
+      "excerpt_pt": "Como podem os jovens que vivem no estrangeiro contribuir para o debate educativo nos seus países?",
+      "excerpt_en": "How can young people living abroad contribute to the education debate in their countries?",
+      "author": "Redação de demonstração",
+      "cover": "",
+      "body_pt": "As experiências de educação em diferentes países podem abrir espaço a novas perguntas sobre acesso, qualidade e oportunidades. Quem estudou em dois sistemas reconhece, muitas vezes, aquilo que cada um faz bem — e aquilo que ambos podem melhorar.\n\nPartilhar boas práticas não significa importar soluções sem contexto. Significa dialogar, comparar e aprender com realidades diferentes.\n\n## O papel de quem está fora\n\nA distância não impede a contribuição. Professores, estudantes e investigadores da diáspora podem participar em redes de mentoria, traduzir materiais, acompanhar projetos locais ou simplesmente trazer para o debate uma perspetiva que só se ganha vivendo noutro lugar.\n\nO futuro da educação não se decide apenas dentro de uma sala de aula. Decide-se também nas conversas que atravessam fronteiras.",
+      "body_en": "Education experiences in different countries can open up new questions about access, quality and opportunity. Those who have studied in two systems often recognise what each one does well — and what both can improve.\n\nSharing good practice does not mean importing solutions without context. It means talking, comparing and learning from different realities.\n\n## The role of those who are away\n\nDistance does not prevent contribution. Teachers, students and researchers in the diaspora can join mentoring networks, translate materials, support local projects or simply bring to the debate a perspective that can only be gained by living elsewhere.\n\nThe future of education is not decided only inside a classroom. It is also decided in conversations that cross borders."
+    },
+    {
+      "id": "distancia-e-cidadania",
+      "date": "2026-10-05",
+      "tag_pt": "Cidadania",
+      "tag_en": "Citizenship",
+      "title_pt": "A distância não nos retira o direito de participar",
+      "title_en": "Distance does not take away our right to take part",
+      "excerpt_pt": "A participação cívica não termina quando atravessamos uma fronteira.",
+      "excerpt_en": "Civic participation does not end when we cross a border.",
+      "author": "Redação de demonstração",
+      "cover": "",
+      "body_pt": "A cidadania é feita de participação, atenção e compromisso. O lugar onde vivemos pode mudar, mas as questões que nos mobilizam não desaparecem.\n\nVotar, quando possível, é apenas uma parte. Participar é também escrever, perguntar, organizar, traduzir, ligar pessoas e trazer para o espaço público aquilo que ainda não é ouvido.\n\n## Uma rede, não uma ausência\n\nUma rede de jovens com diferentes experiências pode tornar-se um espaço de debate informado, respeito e construção de propostas. Não se trata de falar pelo país de origem, mas de falar com ele — a partir de um lugar que é, ao mesmo tempo, dentro e fora.\n\nA distância geográfica não significa distância cívica. Significa, muitas vezes, uma forma diferente de estar presente.",
+      "body_en": "Citizenship is made of participation, attention and commitment. The place we live in may change, but the issues that move us do not disappear.\n\nVoting, when possible, is only one part of it. Taking part also means writing, asking, organising, translating, connecting people and bringing into public space what is not yet heard.\n\n## A network, not an absence\n\nA network of young people with different experiences can become a space for informed debate, respect and the construction of proposals. It is not about speaking for the country of origin, but about speaking with it — from a place that is, at the same time, inside and outside.\n\nGeographic distance does not mean civic distance. It often means a different way of being present."
+    }
+  ]
+}
