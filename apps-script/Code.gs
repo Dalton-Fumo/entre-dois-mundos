@@ -16,7 +16,7 @@
 
 const CONFIG = {
   /* Email que recebe o aviso de cada candidatura */
-  NOTIFY_EMAIL: "geral@entre-dois-mundos.com",
+  NOTIFY_EMAIL: "andreza.caldeira12@gmail.com",
 
   /* Nome da pasta no Drive (criada automaticamente) */
   ROOT_FOLDER_NAME: "Entre Dois Mundos — Candidaturas",
