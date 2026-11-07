@@ -3,13 +3,352 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Administração — Uma Voz Entre Dois Mundos</title>
-  <link rel="icon" href="../assets/favicon.png" sizes="512x512" type="image/png">
+
+  <title>Uma Voz Entre Dois Mundos — Andreza Caldeira</title>
+  <meta name="description" content="Plataforma internacional de participação cívica juvenil. Um espaço onde jovens com experiências entre culturas transformam vivências em ideias, reflexão e participação.">
+  <meta name="author" content="Andreza Caldeira">
+  <meta name="theme-color" content="#470513">
+
+  <!-- Open Graph / redes sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Uma Voz Entre Dois Mundos">
+  <meta property="og:title" content="Uma Voz Entre Dois Mundos — Andreza Caldeira">
+  <meta property="og:description" content="A distância geográfica não significa distância cívica. Um espaço onde jovens transformam experiências entre culturas em ideias, reflexão e participação.">
+  <meta property="og:image" content="https://entre-dois-mundos.netlify.app/assets/og-image.jpg">
+  <meta property="og:url" content="https://entre-dois-mundos.netlify.app/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.png" sizes="512x512" type="image/png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <!-- Tipografia: Bodoni Moda (a mesma família do logótipo) + DM Sans (interface) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <!-- Painel de edição de artigos e da página da Fundadora.
-       Login com GitHub (ver GUIA-LANCAMENTO.md, secção 4). -->
-  <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js"></script>
+  <a class="skip-link" href="#conteudo">Saltar para o conteúdo</a>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio" aria-label="UMA VOZ ENTRE DOIS MUNDOS">
+        <img class="brand-mark" src="assets/logo-mark.png" alt="" width="92" height="36" decoding="async">
+        <span class="brand-text">
+          <span class="brand-l1" data-i18n="brand_line1">UMA VOZ ENTRE</span>
+          <span class="brand-l2" data-i18n="brand_line2">DOIS MUNDOS</span>
+        </span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav" aria-label="Principal">
+        <a href="#sobre" data-i18n="nav_project">O projeto</a>
+        <a href="#artigos" data-i18n="nav_articles">Artigos</a>
+        <a href="#candidaturas" data-i18n="nav_apply">Candidaturas</a>
+        <a href="#fundadora" data-i18n="nav_founder">Fundadora</a>
+        <button class="lang-toggle" id="langToggle" type="button">
+          <span class="lang-pt">PT</span><span class="lang-sep">|</span><span class="lang-en">EN</span>
+          <span class="sr-only" data-i18n="lang_toggle_label">— Mudar idioma / Switch language</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero_eyebrow">Plataforma internacional de participação cívica juvenil</p>
+
+          <h1 class="hero-title">
+            <span class="ht-line" data-i18n="hero_line1">UMA VOZ ENTRE</span>
+            <span class="ht-name">ANDREZA CALDEIRA</span>
+            <span class="ht-line" data-i18n="hero_line2">DOIS MUNDOS</span>
+          </h1>
+
+          <p class="hero-lead" data-i18n="hero_lead">A distância geográfica não significa distância cívica. Um espaço onde jovens transformam experiências entre culturas em ideias, reflexão e participação.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-gold" href="#candidaturas" data-i18n="hero_btn_apply">Quero participar</a>
+            <a class="btn btn-outline" href="#artigos" data-i18n="hero_btn_articles">Explorar artigos</a>
+          </div>
+        </div>
+
+        <div class="orb" aria-hidden="true">
+          <span class="orb-mono">UVM</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ O PROJETO ============================ -->
+    <section class="section" id="sobre">
+      <div class="wrap">
+        <p class="eyebrow eyebrow-dark" data-i18n="project_eyebrow">O manifesto</p>
+        <h2 class="section-title" data-i18n-html="project_title">Duas pertenças.<br>Uma voz sem fronteiras.</h2>
+        <p class="lead" data-i18n="project_lead">Uma iniciativa editorial e de participação cívica dirigida a jovens com dupla nacionalidade, experiências migratórias ou vivências multiculturais. Queremos reunir perspetivas sobre os países de onde vimos, os lugares onde vivemos e o futuro que podemos construir em conjunto.</p>
+
+        <div class="metrics">
+          <div class="metric">
+            <strong>01</strong>
+            <p><b data-i18n="metric1_title">Participação</b><br><span data-i18n="metric1_desc">Dar espaço a novas vozes no debate público.</span></p>
+          </div>
+          <div class="metric">
+            <strong>02</strong>
+            <p><b data-i18n="metric2_title">Conhecimento</b><br><span data-i18n="metric2_desc">Promover artigos sobre educação, cidadania, cultura, economia e ambiente.</span></p>
+          </div>
+          <div class="metric">
+            <strong>03</strong>
+            <p><b data-i18n="metric3_title">Ligação</b><br><span data-i18n="metric3_desc">Criar pontes entre jovens, países e gerações.</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ ARTIGOS ============================ -->
+    <section class="section section-alt" id="artigos">
+      <div class="wrap">
+        <p class="eyebrow eyebrow-dark" data-i18n="articles_eyebrow">Revista digital</p>
+        <h2 class="section-title" data-i18n="articles_title">Ideias que atravessam fronteiras.</h2>
+        <p class="lead" data-i18n="articles_lead">Explora artigos e participa na conversa. Cada texto nasce de uma voz entre culturas — e cada leitura é um convite a pensar de outro lugar.</p>
+
+        <div class="filterbar" id="filterBar" role="group" aria-label="Filtrar artigos"></div>
+
+        <div class="cards" id="articleCards" aria-live="polite"></div>
+
+        <p class="articles-note" id="articlesNote" hidden></p>
+      </div>
+    </section>
+
+    <!-- ============================ CANDIDATURAS ============================ -->
+    <section class="section dark" id="candidaturas">
+      <div class="wrap apply-grid">
+        <div class="apply-copy">
+          <p class="eyebrow" data-i18n="apply_eyebrow">Faz parte da primeira edição</p>
+          <h2 class="section-title" data-i18n="apply_title">A tua voz também conta.</h2>
+          <p class="lead lead-light" data-i18n="apply_lead">Vives entre países ou culturas? Tens vontade de escrever sobre os desafios e as oportunidades das sociedades às quais pertences? Este espaço foi pensado para ti.</p>
+
+          <div class="pillrow">
+            <span class="pill" data-i18n="apply_pill1">Jovens adultos</span>
+            <span class="pill" data-i18n="apply_pill2">Escrita e opinião</span>
+            <span class="pill" data-i18n="apply_pill3">Perspetivas internacionais</span>
+          </div>
+
+          <ul class="apply-list">
+            <li data-i18n="apply_point1">Candidatura gratuita e confidencial.</li>
+            <li data-i18n="apply_point2">Anexa o teu currículo e/ou carta de motivação.</li>
+            <li data-i18n="apply_point3">Os textos selecionados são publicados com o teu consentimento.</li>
+          </ul>
+
+          <p class="apply-deadline" data-i18n="apply_deadline">Candidaturas abertas para a primeira edição.</p>
+        </div>
+
+        <div class="form-card">
+          <form id="applyForm" class="form" novalidate>
+            <div class="form-head">
+              <p class="form-kicker" data-i18n="form_kicker">Manifestação de interesse</p>
+              <p class="form-intro" data-i18n="form_intro">Preenche os campos abaixo. Leva menos de 5 minutos.</p>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="name" data-i18n="f_name">Nome completo *</label>
+                <input id="name" name="name" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="email" data-i18n="f_email">Email *</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="phone" data-i18n="f_phone">Telefone</label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel">
+              </div>
+              <div class="field">
+                <label for="linkedin" data-i18n="f_linkedin">LinkedIn</label>
+                <input id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/…">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="countryFrom" data-i18n="f_country_from">País de origem / ligação cultural *</label>
+                <input id="countryFrom" name="countryFrom" type="text" required>
+              </div>
+              <div class="field">
+                <label for="countryLive" data-i18n="f_country_live">País onde vives *</label>
+                <input id="countryLive" name="countryLive" type="text" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="topic" data-i18n="f_topic">Tema de interesse *</label>
+              <select id="topic" name="topic" required>
+                <option value="" data-i18n="f_topic_placeholder">Seleciona uma área</option>
+                <option value="education" data-i18n="topic_education">Educação</option>
+                <option value="citizenship" data-i18n="topic_citizenship">Cidadania e direitos</option>
+                <option value="identity" data-i18n="topic_identity">Identidade e diáspora</option>
+                <option value="environment" data-i18n="topic_environment">Ambiente e sustentabilidade</option>
+                <option value="economy" data-i18n="topic_economy">Economia e inovação</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message" data-i18n="f_message">Porque gostarias de participar?</label>
+              <textarea id="message" name="message" rows="4" data-i18n-placeholder="f_message_ph" placeholder="Conta-nos brevemente a tua motivação…"></textarea>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="cv" data-i18n="f_cv">Currículo (PDF, DOC, DOCX)</label>
+                <input id="cv" name="cv" type="file" class="file-input" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                <label class="file-drop" for="cv">
+                  <span class="file-plus" aria-hidden="true">+</span>
+                  <span class="file-text">
+                    <span class="file-title" data-i18n="f_cv_choose">Anexar currículo</span>
+                    <span class="file-name" data-i18n="f_no_file">Nenhum ficheiro selecionado</span>
+                  </span>
+                </label>
+              </div>
+
+              <div class="field">
+                <label for="letter" data-i18n="f_letter">Carta de motivação (opcional)</label>
+                <input id="letter" name="letter" type="file" class="file-input" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                <label class="file-drop" for="letter">
+                  <span class="file-plus" aria-hidden="true">+</span>
+                  <span class="file-text">
+                    <span class="file-title" data-i18n="f_letter_choose">Anexar carta</span>
+                    <span class="file-name" data-i18n="f_no_file">Nenhum ficheiro selecionado</span>
+                  </span>
+                </label>
+              </div>
+            </div>
+            <p class="hint" data-i18n="f_files_hint">Anexa o currículo e/ou a carta de motivação. Formatos PDF, DOC ou DOCX, até 5 MB por ficheiro.</p>
+
+            <label class="check">
+              <input type="checkbox" id="consent" name="consent" required>
+              <span data-i18n-html="f_consent">Autorizo o tratamento dos meus dados e documentos para avaliação desta candidatura, nos termos da <a href="#" data-privacy>Política de Privacidade</a>. *</span>
+            </label>
+
+            <div class="hp" aria-hidden="true">
+              <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+            </div>
+
+            <button class="btn btn-gold btn-submit" type="submit" id="submitBtn">
+              <span class="btn-label" data-i18n="f_submit">Enviar candidatura</span>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+
+            <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+
+            <p class="form-privacy" data-i18n-html="f_privacy_note">Os teus dados são recebidos de forma confidencial e usados apenas para este projeto. Consulta a <a href="#" data-privacy>Política de Privacidade</a>.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ FUNDADORA ============================ -->
+    <section class="section" id="fundadora">
+      <div class="wrap founder-grid">
+        <div class="founder-photo">
+          <img src="assets/fundadora.jpg" alt="Andreza Caldeira" loading="lazy"
+               onerror="this.classList.add('is-missing');this.removeAttribute('src')">
+          <div class="photo-fallback" aria-hidden="true"><span>AC</span></div>
+          <p class="photo-caption" data-i18n="founder_caption">Andreza Caldeira · Fundadora</p>
+        </div>
+
+        <div class="founder-copy">
+          <p class="eyebrow eyebrow-dark" data-i18n="founder_eyebrow">A origem da iniciativa</p>
+          <h2 class="section-title" data-i18n="founder_title">A voz por detrás do projeto.</h2>
+          <div class="rich" id="founderBio" data-i18n-html="founder_bio">
+            <p><b>Andreza Caldeira</b> é jurista, autora e colunista luso-moçambicana. O seu percurso entre Portugal e Moçambique, a escrita e a participação cívica inspiraram a criação de um espaço onde outras vozes possam ser ouvidas.</p>
+          </div>
+
+          <blockquote class="quote" id="founderQuote" data-i18n="founder_quote">“Não quero ser apenas uma voz entre dois mundos. Quero abrir espaço para que outras vozes também sejam ouvidas.”</blockquote>
+
+          <p class="signature">Andreza Caldeira</p>
+          <p class="founder-role" data-i18n="founder_role">Autora de «Assinado: uma experiência vivida»</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <img class="footer-mark" src="assets/logo-mark.png" alt="" width="120" height="47" loading="lazy">
+        <p class="footer-name" data-i18n="brand_line1">UMA VOZ ENTRE</p>
+        <p class="footer-name footer-name-2" data-i18n="brand_line2">DOIS MUNDOS</p>
+        <p class="footer-tagline" data-i18n="footer_tagline">Um projeto de Andreza Caldeira · «Assinado: uma experiência vivida»</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="Rodapé">
+        <a href="#sobre" data-i18n="nav_project">O projeto</a>
+        <a href="#artigos" data-i18n="nav_articles">Artigos</a>
+        <a href="#candidaturas" data-i18n="nav_apply">Candidaturas</a>
+        <a href="#fundadora" data-i18n="nav_founder">Fundadora</a>
+      </nav>
+
+      <div class="footer-contact">
+        <p class="footer-label" data-i18n="footer_contact_label">Contacto</p>
+        <a id="footerEmail" href="mailto:geral@entre-dois-mundos.com">geral@entre-dois-mundos.com</a>
+        <p class="footer-label" data-i18n="footer_legal_label">Informação</p>
+        <a href="#" data-privacy data-i18n="footer_privacy">Política de Privacidade</a>
+        <a href="admin/" data-i18n="footer_admin">Área de administração</a>
+      </div>
+    </div>
+
+    <div class="wrap footer-bottom">
+      <p data-i18n="footer_rights">© 2026 Uma Voz Entre Dois Mundos. Todos os direitos reservados.</p>
+      <p class="footer-credit" data-i18n="footer_credit">Feito entre dois mundos.</p>
+    </div>
+  </footer>
+
+  <!-- ============================ MODAL: ARTIGO ============================ -->
+  <div class="modal" id="articleModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-backdrop" data-close-article></div>
+    <div class="modal-panel" role="document">
+      <button class="modal-close" id="closeModal" type="button" aria-label="Fechar">&times;</button>
+      <div class="modal-body">
+        <p class="tag" id="modalTag"></p>
+        <h2 id="modalTitle"></h2>
+        <p class="modal-meta" id="modalMeta"></p>
+        <div class="article-body" id="modalBody"></div>
+
+        <section class="comments" id="commentsSection" hidden>
+          <h3 data-i18n="comments_title">Comentários</h3>
+          <p class="comments-sub" data-i18n="comments_sub">Partilha a tua reflexão sobre este artigo.</p>
+          <div id="giscus"></div>
+          <p class="comments-off" id="commentsOff" data-i18n="comments_off">Os comentários serão ativados em breve.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================ MODAL: PRIVACIDADE ============================ -->
+  <div class="modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacyTitle" hidden>
+    <div class="modal-backdrop" data-close-privacy></div>
+    <div class="modal-panel" role="document">
+      <button class="modal-close" id="closePrivacy" type="button" aria-label="Fechar">&times;</button>
+      <div class="modal-body">
+        <p class="tag" data-i18n="privacy_kicker">Informação legal</p>
+        <h2 id="privacyTitle" data-i18n="privacy_title">Política de Privacidade</h2>
+        <div class="article-body" id="privacyBody" data-i18n-html="privacy_body"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="data/site.js"></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>
