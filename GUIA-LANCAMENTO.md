@@ -159,31 +159,14 @@ Confirma que:
 
 ---
 
-## 6. Comentários nos artigos (opcional)
+## 6. Comentários nos artigos
 
-Os comentários usam **Giscus** (GitHub Discussions). Só faz sentido se quiseres
-moderação e leitores com conta GitHub.
+Cada artigo tem uma secção de comentários: o leitor escreve o nome e o comentário,
+sem precisar de conta. Os comentários ficam guardados na base de dados da Netlify
+(tabela `comments`) e aparecem logo no artigo.
 
-1. O repositório tem de ser **público**.
-2. Instala a app em [giscus.app](https://giscus.app) no repositório.
-3. Em [github.com/apps/giscus](https://github.com/apps/giscus) → **Install** → escolhe o repo.
-4. No repositório: **Settings** → **General** → **Features** → ativa **Discussions**.
-5. Cria uma categoria **Comentários** (tipo *Announcements* ou *Open*).
-6. Em [giscus.app](https://giscus.app), preenche o repo e copia os valores
-   `data-repo-id` e `data-category-id`.
-7. Em `data/site.js`:
-
-```js
-giscus: {
-  enabled: true,
-  repo: "Dalton-Fumo/entre-dois-mundos",
-  repoId: "R_kgDO...",
-  category: "Comentários",
-  categoryId: "DIC_kwDO...",
-},
-```
-
-> Enquanto `enabled: false`, a secção de comentários fica escondida — o site funciona normalmente.
+- Para desligar os comentários: em `data/site.js`, muda `commentsEnabled` para `false`.
+- Para apagar um comentário: Netlify → projeto → **Database** → tabela `comments`.
 
 ---
 

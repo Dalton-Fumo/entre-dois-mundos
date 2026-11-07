@@ -12,8 +12,8 @@ backend:
   # base_url: https://o-teu-oauth-client.workers.dev
 
 # Endereço público do site (mostrado no painel)
-site_url: https://entre-dois-mundos.netlify.app
-display_url: https://entre-dois-mundos.netlify.app
+site_url: https://uma-voz-entre-dois-mundos.netlify.app
+display_url: https://uma-voz-entre-dois-mundos.netlify.app
 logo:
   src: /assets/favicon.png
 

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://entre-dois-mundos.netlify.app/sitemap.xml
+Sitemap: https://uma-voz-entre-dois-mundos.netlify.app/sitemap.xml

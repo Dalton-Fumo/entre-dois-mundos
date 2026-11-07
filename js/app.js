@@ -340,54 +340,103 @@
   function closeArticle() {
     hideModal($("#articleModal"));
     currentArticle = null;
+    commentsPostId = null;
     if (location.hash.indexOf("#artigo/") === 0) {
       try { history.replaceState(null, "", "#artigos"); } catch (e) {}
     }
   }
 
+  var commentsPostId = null;
+
+  function renderComment(c) {
+    var li = document.createElement("li");
+    li.className = "comment";
+    var when = c.createdAt ? formatDate(String(c.createdAt).slice(0, 10)) : "";
+    li.innerHTML =
+      '<p class="comment-head"><strong>' + esc(c.name) + '</strong>' +
+      (when ? ' <span class="comment-date">' + esc(when) + '</span>' : '') + '</p>' +
+      '<p class="comment-body">' + esc(c.body).replace(/\n/g, "<br>") + '</p>';
+    return li;
+  }
+
+  function setCommentStatus(key, kind) {
+    var status = $("#commentStatus");
+    if (!status) return;
+    status.textContent = key ? t(key) : "";
+    status.className = "cf-status" + (kind ? " is-" + kind : "");
+  }
+
   function setupComments(post) {
     var section = $("#commentsSection");
-    var box = $("#giscus");
-    var off = $("#commentsOff");
-    if (!section || !box) return;
+    var list = $("#commentList");
+    var empty = $("#commentsEmpty");
+    if (!section || !list) return;
 
-    box.innerHTML = "";
-    var giscus = SITE.giscus || {};
-
-    if (!giscus.enabled || !giscus.repoId || !giscus.categoryId) {
-      section.hidden = true;
-      return;
-    }
-
+    if (!SITE.commentsEnabled) { section.hidden = true; return; }
     section.hidden = false;
-    if (off) off.hidden = true;
 
-    var script = document.createElement("script");
-    script.src = "https://giscus.app/client.js";
-    script.async = true;
-    script.crossOrigin = "anonymous";
+    // Ao mudar de idioma o artigo é re-renderizado: não recarregar se for o mesmo.
+    if (commentsPostId === post.id) return;
+    commentsPostId = post.id;
+    list.innerHTML = "";
+    empty.hidden = true;
+    setCommentStatus("");
 
-    var attrs = {
-      "data-repo": giscus.repo,
-      "data-repo-id": giscus.repoId,
-      "data-category": giscus.category,
-      "data-category-id": giscus.categoryId,
-      "data-mapping": "specific",
-      "data-term": "artigo-" + post.id,
-      "data-strict": "0",
-      "data-reactions-enabled": "1",
-      "data-emit-metadata": "0",
-      "data-input-position": "top",
-      "data-theme": "light",
-      "data-lang": lang,
-      "data-loading": "lazy"
-    };
+    fetch("/api/comments?post=" + encodeURIComponent(post.id), { cache: "no-store" })
+      .then(function (res) { if (!res.ok) throw new Error(res.status); return res.json(); })
+      .then(function (data) {
+        if (commentsPostId !== post.id) return;
+        var items = (data && data.comments) || [];
+        items.forEach(function (c) { list.appendChild(renderComment(c)); });
+        empty.hidden = items.length > 0;
+      })
+      .catch(function () {
+        if (commentsPostId !== post.id) return;
+        setCommentStatus("comments_err_load", "error");
+      });
+  }
 
-    Object.keys(attrs).forEach(function (key) {
-      script.setAttribute(key, attrs[key]);
+  function setupCommentForm() {
+    var form = $("#commentForm");
+    if (!form) return;
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (!commentsPostId) return;
+      var name = form.elements.name.value.trim();
+      var body = form.elements.body.value.trim();
+      if (name.length < 2 || name.length > 60) { setCommentStatus("comments_err_name", "error"); form.elements.name.focus(); return; }
+      if (body.length < 2 || body.length > 2000) { setCommentStatus("comments_err_body", "error"); form.elements.body.focus(); return; }
+
+      var button = form.querySelector("button[type=submit]");
+      var postId = commentsPostId;
+      button.disabled = true;
+      setCommentStatus("comments_sending");
+
+      fetch("/api/comments", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ post: postId, name: name, body: body, website: form.elements.website.value })
+      })
+        .then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (data) {
+            if (res.status === 409) throw new Error("dup");
+            if (!res.ok) throw new Error("fail");
+            return data;
+          });
+        })
+        .then(function (data) {
+          if (data.comment && postId === commentsPostId) {
+            $("#commentList").appendChild(renderComment(data.comment));
+            $("#commentsEmpty").hidden = true;
+          }
+          form.elements.body.value = "";
+          setCommentStatus("comments_ok", "ok");
+        })
+        .catch(function (err) {
+          setCommentStatus(err && err.message === "dup" ? "comments_err_dup" : "comments_err", "error");
+        })
+        .then(function () { button.disabled = false; });
     });
-
-    box.appendChild(script);
   }
 
   /* ------------------------------------------------------------
@@ -669,6 +718,7 @@
     setupFileInputs();
     setupForm();
     setupModals();
+    setupCommentForm();
 
     $("#langToggle").addEventListener("click", function () {
       setLanguage(lang === "pt" ? "en" : "pt");
@@ -680,6 +730,7 @@
       } else if (!$("#articleModal").hidden) {
         hideModal($("#articleModal"));
         currentArticle = null;
+        commentsPostId = null;
       }
     });
 
