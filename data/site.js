@@ -20,7 +20,7 @@ const SITE = {
      Enquanto começar por "REPLACE", o formulário avisa que
      ainda não está ligado e não envia nada.
      ------------------------------------------------------------ */
-  applyEndpoint: "REPLACE_WITH_APPS_SCRIPT_URL",
+  applyEndpoint: "https://script.google.com/macros/s/AKfycbzkhv0eRRD2qWG7wj3JkAG_cM0ZdWpbN_aPAdaAH5Eml_3V9F_9KJoFckv0xSb7wZsDjA/exec",
 
   /* Limites dos anexos (têm de coincidir com o Code.gs) */
   maxFileMB: 5,
