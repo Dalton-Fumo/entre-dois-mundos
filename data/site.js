@@ -11,7 +11,7 @@ const SITE = {
   bookTitle: "Assinado: uma experiência vivida",
 
   /* Email público (rodapé, privacidade, mensagens de erro) */
-  contactEmail: "geral@entre-dois-mundos.com",
+  contactEmail: "andreza.caldeira12@gmail.com",
 
   /* ------------------------------------------------------------
      CANDIDATURAS
