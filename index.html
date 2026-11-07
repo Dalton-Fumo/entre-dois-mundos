@@ -14,8 +14,8 @@
   <meta property="og:site_name" content="Uma Voz Entre Dois Mundos">
   <meta property="og:title" content="Uma Voz Entre Dois Mundos — Andreza Caldeira">
   <meta property="og:description" content="A distância geográfica não significa distância cívica. Um espaço onde jovens transformam experiências entre culturas em ideias, reflexão e participação.">
-  <meta property="og:image" content="https://entre-dois-mundos.netlify.app/assets/og-image.jpg">
-  <meta property="og:url" content="https://entre-dois-mundos.netlify.app/">
+  <meta property="og:image" content="https://uma-voz-entre-dois-mundos.netlify.app/assets/og-image.jpg">
+  <meta property="og:url" content="https://uma-voz-entre-dois-mundos.netlify.app/">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" href="assets/favicon.png" sizes="512x512" type="image/png">
@@ -81,8 +81,8 @@
           </div>
         </div>
 
-        <div class="orb" aria-hidden="true">
-          <span class="orb-mono">UVM</span>
+        <div class="hero-logo">
+          <img src="assets/logo.jpeg" alt="Logótipo Uma Voz Entre Dois Mundos — Andreza Caldeira" width="1600" height="1600" decoding="async" fetchpriority="high">
         </div>
       </div>
     </section>
@@ -328,8 +328,27 @@
         <section class="comments" id="commentsSection" hidden>
           <h3 data-i18n="comments_title">Comentários</h3>
           <p class="comments-sub" data-i18n="comments_sub">Partilha a tua reflexão sobre este artigo.</p>
-          <div id="giscus"></div>
-          <p class="comments-off" id="commentsOff" data-i18n="comments_off">Os comentários serão ativados em breve.</p>
+
+          <ol class="comment-list" id="commentList" aria-live="polite"></ol>
+          <p class="comments-empty" id="commentsEmpty" data-i18n="comments_empty" hidden>Ainda não há comentários. Sê a primeira pessoa a comentar.</p>
+
+          <form class="comment-form" id="commentForm" novalidate>
+            <label class="cf-field">
+              <span data-i18n="comments_name">Nome</span>
+              <input type="text" name="name" maxlength="60" required autocomplete="name">
+            </label>
+            <label class="cf-field">
+              <span data-i18n="comments_body">Comentário</span>
+              <textarea name="body" rows="4" maxlength="2000" required></textarea>
+            </label>
+            <label class="cf-hp" aria-hidden="true">Website
+              <input type="text" name="website" tabindex="-1" autocomplete="off">
+            </label>
+            <div class="cf-actions">
+              <button class="btn btn-gold" type="submit" data-i18n="comments_submit">Publicar comentário</button>
+              <p class="cf-status" id="commentStatus" role="status"></p>
+            </div>
+          </form>
         </section>
       </div>
     </div>

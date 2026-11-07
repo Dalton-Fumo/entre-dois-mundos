@@ -26,18 +26,9 @@ const SITE = {
   maxFileMB: 5,
   allowedExtensions: ["pdf", "doc", "docx"],
 
-  /* ------------------------------------------------------------
-     COMENTÁRIOS (Giscus) — opcional
-     Só funciona com um repositório público no GitHub.
-     Guia: GUIA-LANCAMENTO.md → "Comentários"
-     ------------------------------------------------------------ */
-  giscus: {
-    enabled: false,
-    repo: "Dalton-Fumo/entre-dois-mundos",
-    repoId: "",
-    category: "Comentários",
-    categoryId: "",
-  },
+  /* COMENTÁRIOS — guardados na base de dados da Netlify (/api/comments) */
+  commentsEnabled: true,
+
 };
 
 /* ============================================================
@@ -167,7 +158,17 @@ const I18N = {
 
     comments_title: "Comentários",
     comments_sub: "Partilha a tua reflexão sobre este artigo.",
-    comments_off: "Os comentários serão ativados em breve.",
+    comments_empty: "Ainda não há comentários. Sê a primeira pessoa a comentar.",
+    comments_name: "Nome",
+    comments_body: "Comentário",
+    comments_submit: "Publicar comentário",
+    comments_sending: "A publicar…",
+    comments_ok: "Obrigado! O teu comentário foi publicado.",
+    comments_err: "Não foi possível publicar o comentário. Tenta novamente.",
+    comments_err_load: "Não foi possível carregar os comentários.",
+    comments_err_name: "Indica o teu nome (2 a 60 caracteres).",
+    comments_err_body: "Escreve um comentário (2 a 2000 caracteres).",
+    comments_err_dup: "Este comentário já foi publicado.",
 
     privacy_kicker: "Informação legal",
     privacy_title: "Política de Privacidade",
@@ -320,7 +321,17 @@ const I18N = {
 
     comments_title: "Comments",
     comments_sub: "Share your thoughts on this article.",
-    comments_off: "Comments will be enabled soon.",
+    comments_empty: "No comments yet. Be the first to comment.",
+    comments_name: "Name",
+    comments_body: "Comment",
+    comments_submit: "Post comment",
+    comments_sending: "Posting…",
+    comments_ok: "Thank you! Your comment has been posted.",
+    comments_err: "Your comment could not be posted. Please try again.",
+    comments_err_load: "Comments could not be loaded.",
+    comments_err_name: "Please enter your name (2 to 60 characters).",
+    comments_err_body: "Please write a comment (2 to 2000 characters).",
+    comments_err_dup: "This comment has already been posted.",
 
     privacy_kicker: "Legal information",
     privacy_title: "Privacy Policy",
